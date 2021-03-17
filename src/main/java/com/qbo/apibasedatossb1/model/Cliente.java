@@ -16,8 +16,8 @@ public class Cliente {
 	private Long idcliente;
 	
 	@Column(name = "nomcliente")
-	
 	private String nomcliente;
+	
 	@Column(name = "apecliente")
 	private String apecliente;
 	

@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.qbo.apibasedatossb1.model.Cliente;
@@ -17,6 +19,11 @@ public class ClienteService implements BaseService<Cliente>{
 	@Autowired
 	private ClienteRepository clienteRepository;
 	
+	
+	public Page<Cliente> searchByName(String nombre, Pageable pageable){
+		return clienteRepository.searchByNameQueryNative(nombre, pageable);
+		
+	}
 	
 	public Optional<Cliente> searchByDni(String dniCLiente){
 		Optional<Cliente> entityOptional=clienteRepository
