@@ -14,10 +14,22 @@ import com.qbo.apibasedatossb1.repository.ClienteRepository;
 @Service
 public class ClienteService implements BaseService<Cliente>{
 
-	
-	
 	@Autowired
 	private ClienteRepository clienteRepository;
+	
+	
+	public Optional<Cliente> searchByDni(String dniCLiente){
+		Optional<Cliente> entityOptional=clienteRepository
+			 				.searchByDniQueryNative(dniCLiente);
+			if(entityOptional.isEmpty()) {
+			
+				return Optional.empty();
+			}else {
+			
+				return entityOptional;
+	       	}
+		
+	}
 	
 	@Override
 	public List<Cliente> findAll() {

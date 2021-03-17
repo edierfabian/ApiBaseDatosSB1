@@ -27,6 +27,9 @@ public class ClienteController {
 	@Autowired
 	protected ClienteService clienteService;
 	
+	
+	
+	
 	@GetMapping("")
 	public  ResponseEntity<List<Cliente>> getAll(){
 		
@@ -44,6 +47,16 @@ public class ClienteController {
 				.orElseThrow(()->
 				new ResourceNotFoundException("No found State with id= " +id));
 		return new ResponseEntity<>(cliente,HttpStatus.OK);
+	}
+	
+	@GetMapping("/dni/{dni}")
+	public ResponseEntity<Cliente> searchByDni(@PathVariable("dni")String dni) throws ResourceNotFoundException{
+		
+		Cliente cliente= clienteService.searchByDni(dni)
+						.orElseThrow(()-> new ResourceNotFoundException("Not Found CLiente with DNI = "+dni));
+		
+		return new ResponseEntity<>(cliente,HttpStatus.OK);
+		
 	}
 	
 	@PostMapping("")
