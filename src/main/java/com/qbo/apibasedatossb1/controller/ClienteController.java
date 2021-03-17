@@ -49,7 +49,7 @@ public class ClienteController {
 		return new ResponseEntity<>(cliente,HttpStatus.OK);
 	}
 	
-	@GetMapping("/dni/{dnis}")
+	@GetMapping("/dni/{dni}")
 	public ResponseEntity<Cliente> searchByDni(@PathVariable("dni")String dni) throws ResourceNotFoundException{
 		
 		Cliente cliente= clienteService.searchByDni(dni)
