@@ -72,6 +72,7 @@ public class ClienteController {
 		
 	}
 	
+	
 	@PreAuthorize("hasRole('ADMIN')")
 	@PostMapping("")
 	public ResponseEntity<Cliente> createCliente(@RequestBody Cliente cliente){
@@ -79,6 +80,7 @@ public class ClienteController {
 		
 	}
 	
+	@PreAuthorize("hasRole('ADMIN')")
 	@PutMapping("/{id}")
 	public ResponseEntity<Cliente> updateCliente(@PathVariable ("id")long id,
 			@RequestBody Cliente cliente) throws ResourceNotFoundException{

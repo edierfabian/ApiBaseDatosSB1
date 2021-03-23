@@ -49,7 +49,8 @@ public class AutenticacionController {
 		String clavesecreta="@QBO2021";
 		List<GrantedAuthority> lstautorizacion=
 				AuthorityUtils
-				.commaSeparatedStringToAuthorityList("ROLE_USER");
+				.commaSeparatedStringToAuthorityList("ROLE_ADMIN");
+		//LOS ROLES DE LOS USUARIOS DEBEN CARGARSE DE MANERA DINAMICA(BD)
 		String token=Jwts
 				.builder()
 				.setId("@qboJWT")
