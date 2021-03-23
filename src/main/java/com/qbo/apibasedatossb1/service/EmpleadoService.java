@@ -1,8 +1,6 @@
 package com.qbo.apibasedatossb1.service;
 
 import java.util.HashMap;
-import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,6 +23,11 @@ public class EmpleadoService {
 		HashMap<String , String> respuesta=new HashMap<String,String>();
 		respuesta.put("mensaje","Elemento registrado correctamente");
 		return respuesta;
+		
+	}
+	
+	public Empleado autenticarEmpleado(String usuario, String password) {
+		return empleadoRepository.autenticarEmpleado(usuario, password);
 		
 	}
 	

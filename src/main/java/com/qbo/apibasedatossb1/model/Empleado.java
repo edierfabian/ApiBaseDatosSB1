@@ -2,27 +2,20 @@ package com.qbo.apibasedatossb1.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
-
-
-
 
 @Entity
-//@Table(name= "empleado")
 public class Empleado {
+
 	
 	@Id
-	private Long idEmpleado;
+	private Long idempleado;
 	private String nombre;
 	private String apellido;
-	public Long getIdEmpleado() {
-		return idEmpleado;
+	public Long getIdempleado() {
+		return idempleado;
 	}
-	
-	
-	
-	public void setIdEmpleado(Long idEmpleado) {
-		this.idEmpleado = idEmpleado;
+	public void setIdempleado(Long idempleado) {
+		this.idempleado = idempleado;
 	}
 	public String getNombre() {
 		return nombre;
@@ -36,31 +29,20 @@ public class Empleado {
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
-
-
-
-	public Empleado(Long idEmpleado, String nombre, String apellido) {
+	public Empleado(Long idempleado, String nombre, String apellido) {
 		super();
-		this.idEmpleado = idEmpleado;
+		this.idempleado = idempleado;
 		this.nombre = nombre;
 		this.apellido = apellido;
 	}
-
-
-
 	public Empleado(String nombre, String apellido) {
 		super();
 		this.nombre = nombre;
 		this.apellido = apellido;
 	}
-
-
-
 	public Empleado() {
 		super();
 	}
-	
-	
 	
 	
 }
